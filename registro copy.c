@@ -43,16 +43,22 @@ registro* cria_registro(Lista *lista){
     return novo_registro;
 }
 
-
+void inserir_prox(registro *anterior_registro, registro *atual_registro){
+    anterior_registro->prox = atual_registro;
+}
 
 int main () {
 
     Lista *lista_1 = cria_lista();
     
     registro *reg_1 = cria_registro(lista_1);
+    
+    
     registro *reg_2 = cria_registro(lista_1);
+    inserir_prox(reg_1, reg_2);
+    
     registro *reg_3 = cria_registro(lista_1);
-
+    inserir_prox(reg_2, reg_3);
 
     
     printf("A Quantidade de Registros %d", lista_1->qtd);
